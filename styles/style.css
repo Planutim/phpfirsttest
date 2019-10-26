@@ -1,0 +1,18 @@
+.included{
+  color: darkcyan;
+}
+
+.error{
+  background: red;
+}
+.good{
+  background: green;
+}
+
+body{
+  background: lightblue;
+}
+
+.blue{
+  background: lightblue;
+}
