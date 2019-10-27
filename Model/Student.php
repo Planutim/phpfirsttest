@@ -80,7 +80,7 @@ class Student{
   public function getById($id){
 
     $stmt = $this->db->prepare('SELECT * FROM students WHERE id=:id');
-    $stmt->bindValue(':id',$id,\PDO::PARAM_INT);
+    $stmt->bindValue(':id',$id);
     $stmt->execute();
 
     $data = $stmt->fetch(\PDO::FETCH_ASSOC);
@@ -88,6 +88,20 @@ class Student{
     return $data;
   }
 
+  public function getOrderBy($column){
+    $desc = '';
+    if($column=='examPoints'){
+      $desc = 'desc';
+    }
+    $stmt = $this->db->prepare('SELECT * FROM students ORDER BY :column '.$desc);
+    $stmt->bindValue(':column', $column);
+    $stmt->execute();
+
+    $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    var_dump( $data[0][$column]);
+    return $data;
+
+  }
   public function getLastAdded(){
     
 

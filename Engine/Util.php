@@ -33,6 +33,13 @@ class Util
           return -1;
         }
       });
+    }else if($column == 'examPoints'){
+      uasort($rows, function($a,$b){
+        if($a[$column]>$b[$column])
+          return 1;
+        else
+          return -1;
+      });
     }
 
     return $rows;

@@ -10,11 +10,21 @@
     <table class="table table-bordered">
       <thead class="thead-light">
         <tr>
-          <th scope="col" onclick="sort()" >#</th>
-          <th scope="col" onclick="sort()">Имя</th>
-          <th scope="col">Фамилия</th>
-          <th scope="col">Номер группы</th>
-          <th scope="col">Баллы ЕГЭ</th>
+          <th scope="col"  >
+            <a href="?sortBy=#">test</a>
+          </th>
+          <th scope="col">
+            <a href="?sortBy=firstName">Имя</a>
+          </th>
+          <th scope="col">
+              <a class='' href="?sortBy=lastName">Фамилия</a>
+          </th>
+          <th scope="col">
+           <a href="?sortBy=groupNumber">Номер группы</a>
+          </th>
+          <th scope="col">
+            <a href="?sortBy=examPoints">Баллы ЕГЭ</a>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -34,10 +44,10 @@
   </div>
 
   <script>
-    var data =<?php echo json_encode($data[0]);?>
+    var data =JSON.stringify(<?php echo json_encode($data[0])?>)
 
-    function sort(data,column){
-      alert(typeof(data));
+    function sort(column){
+      window.location.href='/sort/'+column;
     }
   </script>
 

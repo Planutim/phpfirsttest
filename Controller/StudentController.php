@@ -12,8 +12,12 @@ class StudentController{
     $this->Student = new \Student\Model\Student;
     $this->validator = new \Student\Engine\Validator;
   }
-  public function index($message=null){
-    $data = $this->Student->getAll();
+  public function index($message=null,$column=null){
+    if(isset($column)){
+      $data = $this->Student->getOrderBy($column);
+    }else{
+      $data = $this->Student->getAll();
+    }
 
     return $this->util->getView('index', array($data, $message));
   }
@@ -72,6 +76,12 @@ class StudentController{
       return $this->util->getView('form', $result);
     }
     header('Location: /');
+  }
+
+  public function sort($column){
+    $sorted = $this->Student->getOrderBy($column);
+
+    return $this->index(null, $sorted);
   }
 
   public function login($id){

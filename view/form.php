@@ -38,7 +38,7 @@
         <label for="groupNumber">Номер группы</label>
         <input type="text" name="groupNumber" id="groupNumber" required
         
-        class="form-control<?=(isset($data) && $data['groupNumber']==NULL)?'dataerror':''?>" 
+        class="form-control <?=(isset($data) && $data['groupNumber']==NULL)?'dataerror':''?>" 
         value="<?=isset($data['groupNumber'])?$data['groupNumber']:''?>"/>
       </div>
 
