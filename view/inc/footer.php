@@ -1,13 +1,11 @@
       </main>
       
-      <footer class='page-footer blue'>
+      <footer class='page-footer footer blue '>
         <div class="container-fluid text-center ">
-          <div class="row">
-            <div class="col-md-6 mt-3">
-            <p><a href='/' class=''>Return to home</a></p>  
-            <p><?=isset($test)?'haha':'hoho'?></p>
+            <div class="lead">Test site</div>
+            <div class="mt-3">
+            <p><a href='/' class='custom-link'>Return to home</a></p>  
             </div>
-          <div>
         </div>
       </footer>
 

@@ -1,29 +1,33 @@
 <?php require 'inc/header.php' ?>
 
-  <?php if((isset($data)&&$data[1]=='success')): ?>
-      <p>Thanks shit sorted out</p>
-  <?php elseif((isset($data)&&$data[1]=='error')): ?>
-      <p>Shits fuckd up</p>
-  <?php endif ?>
+  <div class="text-center notif">
+    <?php if((isset($data)&&$data[1]=='success')): ?>
+        <p>Thanks shit sorted out</p>
+    <?php elseif((isset($data)&&$data[1]=='error')): ?>
+        <p>Shits fuckd up</p>
+    <?php elseif((isset($data)&&$data[1] == 'search')): ?>
+        <p>Результаты поиска</p>
+    <?php endif ?>
+  </div>
 
   <div class="container">
     <table class="table table-bordered">
       <thead class="thead-light">
         <tr>
           <th scope="col"  >
-            <a href="?sortBy=#">test</a>
+            <a href="/?sortBy=id">#</a>
           </th>
           <th scope="col">
-            <a href="?sortBy=firstName">Имя</a>
+            <a href="/?sortBy=firstName">Имя</a>
           </th>
           <th scope="col">
               <a class='' href="?sortBy=lastName">Фамилия</a>
           </th>
           <th scope="col">
-           <a href="?sortBy=groupNumber">Номер группы</a>
+           <a href="/?sortBy=groupNumber">Номер группы</a>
           </th>
           <th scope="col">
-            <a href="?sortBy=examPoints">Баллы ЕГЭ</a>
+            <a href="/?sortBy=examPoints">Баллы ЕГЭ</a>
           </th>
         </tr>
       </thead>

@@ -16,7 +16,7 @@ class StudentController{
     if(isset($column)){
       $data = $this->Student->getOrderBy($column);
     }else{
-      $data = $this->Student->getAll();
+      $data = $this->Student->getOrderBy('examPoints');
     }
 
     return $this->util->getView('index', array($data, $message));
@@ -62,11 +62,9 @@ class StudentController{
       }
 
       if($this->Student->update($result)){
-        echo 'success';
         return $this->index('success');
       }
       else{
-        echo 'error';
         return $this->index('error');
       }
       return $this->notFound();
@@ -77,7 +75,9 @@ class StudentController{
 
       return $this->util->getView('form', $result);
     }
-    header('Location: /');
+    header('Location:/',true,303);
+    exit();
+
   }
 
   public function sort($column){
@@ -95,6 +95,14 @@ class StudentController{
     \Student\Engine\Auth::logout();
     header('Location: /');
     $this->index();
+  }
+
+  public function search(){
+    if(isset($_GET['query'])){
+      $data = $this->Student->search($_GET['query']);
+
+      return $this->util->getView('index',array($data, 'search'));
+    }
   }
   public function notFound(){
     return $this->util->getView('notfound');

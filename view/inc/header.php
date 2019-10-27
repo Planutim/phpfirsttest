@@ -35,14 +35,14 @@
               <?php endif ?>
             </li>
           </ul>
-          <form class="form-inline mt-5">
-            <input class="form-control mr-2" type="search"  placeholder="">
+          <form class="form-inline mt-5" action="/search" method="get">
+            <input class="form-control mr-2" name="query" type="search" placeholder="">
             <button class="btn btn-outline-primary ml-2" type="submit">Поиск</button>
           </form>
       </div>  
       </nav>
     </header>
-    <main class='container-fluid'>
+    <main class='container-fluid w-100 hv-100'>
     
     <?php //require_once './Engine/Router.php'; ?>
 

@@ -1,6 +1,5 @@
 <?php require 'inc/header.php' ?>
 
-<?php var_dump($data) ?>
 
     
 

@@ -12,3 +12,34 @@
 th{
   position:relative;
 }
+
+.custom-link,
+.custom-link:hover,
+.custom-link:focus{
+  text-decoration: none;
+
+}
+
+.notif{
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  background: lightslategrey;
+  
+}
+
+html{
+  position: relative;
+  min-height: 100%;
+  background: lightslategrey;
+}
+
+body{
+  margin-bottom: 60px;
+}

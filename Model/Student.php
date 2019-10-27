@@ -96,6 +96,8 @@ class Student{
 
     $query='SELECT * FROM students ORDER BY ';
     switch($column){
+      case 'id':
+        $query = $query .'id';break;
       case 'firstName':
         $query = $query . 'firstName';break;
       case 'lastName':
@@ -105,12 +107,12 @@ class Student{
       case 'examPoints':
         $query = $query . 'examPoints DESC';break;
     }
-    
+
     $stmt = $this->db->prepare($query);
     $stmt->execute();
 
     $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-    var_dump( $data[0][$column]);
+
     return $data;
 
   }
@@ -125,4 +127,15 @@ class Student{
     return $data;
   }
 
+
+  public function search($pattern){
+    $query = "SELECT * FROM STUDENTS WHERE
+      firstName LIKE LOWER('%" . $pattern . "%') or
+      lastName LIKE LOWER('%" . $pattern . "%') or
+      groupNumber LIKE LOWER('%" . $pattern . "%')";
+
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+  }
 }

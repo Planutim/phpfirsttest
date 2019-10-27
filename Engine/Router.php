@@ -48,6 +48,9 @@ class Router{
         $Controller->login();break;
       case '/logout':
         $Controller->logout();break;
+      //search
+      case preg_match('/\/search\?query=.+/u',$_SERVER['REQUEST_URI'])?true:false:
+        $Controller->search();break;
       default:
         $Controller->notFound();break;
     }
