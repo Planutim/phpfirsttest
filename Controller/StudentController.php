@@ -14,7 +14,7 @@ class StudentController{
   }
   public function index($message=null){
     $data = $this->Student->getAll();
-    
+
     return $this->util->getView('index', array($data, $message));
   }
 
@@ -57,11 +57,14 @@ class StudentController{
       }
 
       if($this->Student->update($result)){
+        echo 'success';
         return $this->index('success');
       }
       else{
+        echo 'error';
         return $this->index('error');
       }
+      return $this->notFound();
     }
     else if(isset($_SESSION['id'])){
       $result=$this->Student->getById($_SESSION['id']);

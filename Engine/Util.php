@@ -11,7 +11,7 @@ class Util
       require $fullPath;
   }
 
-  public function formatuser($user){
+  public function formatData($user){
     if(isset($user['birthYear'])){
       if(mb_strlen($user['birthYear'])==4){
         $user['birthYear']=$user['birthYear'] . '-01-01';

@@ -34,17 +34,10 @@
   </div>
 
   <script>
-    var data = <?php echo json_encode($data[0]) ?>;
+    var data =<?php echo json_encode($data[0]);?>
+
     function sort(data,column){
-      // switch(column){
-      //   case "firstName":
-      //   case "lastName":
-      //   case "groupNumber":
-      //     data.sort((a,b)=>{
-      //       a[]
-      //     })
-      // }
-      alert(JSON.stringify(data));
+      alert(typeof(data));
     }
   </script>
 

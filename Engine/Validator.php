@@ -16,7 +16,7 @@ class Validator{
     if(!in_array($data['sex'],array('male','female')))
       $data['sex']=null;
     //groupnumber
-    if(!preg_match('/^[a-z0-9]{2,5}$/',$data['groupNumber']))
+    if(!preg_match('/^[a-z0-9а-яА-ЯёЁ]{2,5}$/u',$data['groupNumber']))
       $data['groupNumber']=null;
     //email
     if(!preg_match('/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9.]+$/',$data['email'])||mb_strlen($data['email']>50))

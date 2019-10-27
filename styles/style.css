@@ -2,17 +2,10 @@
   color: darkcyan;
 }
 
-.error{
-  background: red;
+.dataerror{
+  border: 1px red solid;
 }
 .good{
   background: green;
 }
 
-body{
-  background: lightblue;
-}
-
-.blue{
-  background: lightblue;
-}

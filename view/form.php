@@ -11,25 +11,25 @@
       <div class='form-group'>
         <label for="firstName">Имя</label>
         <input type="text" name="firstName" id="firstName" required
-        class="form-control <?=(isset($result) && $result['firstName']==null)?'dataerror':''?>" 
-        value="<?=isset($result['firstName'])?$result['firstName']:''?>" />
+        class="form-control <?=(isset($data) && $data['firstName']==null)?'dataerror':''?>" 
+        value="<?=isset($data['firstName'])?$data['firstName']:''?>" />
       </div>
 
       <div class='form-group'>
         <label for="lastName">Фамилия</label>
         <input type="text" name="lastName" id="lastName" required
-        class="form-control <?=(isset($result) && $result['lastName']==null)?'dataerror':''?>" 
-        value="<?=isset($result['lastName'])?$result['lastName']:''?>" />
+        class="form-control <?=(isset($data) && $data['lastName']==null)?'dataerror':''?>" 
+        value="<?=isset($data['lastName'])?$data['lastName']:''?>" />
       </div>
       
       <div class='form-group'>
         <label for="sex">Пол</label>
         <select id="sex" name="sex" class='form-control' required>
           <option value="male" 
-            <?=(isset($result['sex'])&&$result['sex']=='male')?'selected':'';?>
+            <?=(isset($data['sex'])&&$data['sex']=='male')?'selected':'';?>
             >Мужской</option>
           <option value="female" 
-              <?=(isset($result['sex'])&&$result['sex']=='female')?'selected':'';?>
+              <?=(isset($data['sex'])&&$data['sex']=='female')?'selected':'';?>
               >Женский</option>
         </select>
       </div>
@@ -38,39 +38,39 @@
         <label for="groupNumber">Номер группы</label>
         <input type="text" name="groupNumber" id="groupNumber" required
         
-        class="<?=(isset($result) && $result['groupNumber']==null)?'dataerror form-control':'form-control'?>" 
-        value="<?=isset($result['groupNumber'])?$result['groupNumber']:''?>"/>
+        class="form-control<?=(isset($data) && $data['groupNumber']==NULL)?'dataerror':''?>" 
+        value="<?=isset($data['groupNumber'])?$data['groupNumber']:''?>"/>
       </div>
 
       <div class="form-group">
         <label for="email">E-mail</label>
         <input type="email" name="email" id="email" required
-        class="<?=(isset($result) && $result['email']==null)?'dataerror form-control':'form-control'?>" 
-        value="<?=isset($result['email'])?$result['email']:''?>" /> 
+        class="form-control <?=(isset($data) && $data['email']==null)?'dataerror':''?>" 
+        value="<?=isset($data['email'])?$data['email']:''?>" /> 
       </div>
 
       <div class='form-group'>
         <label for="examPoints">ЕГЭ баллы</label>
         <input type="number" name="examPoints" id="examPoints" required
-        class="<?=(isset($result) && $result['examPoints']==null)?'dataerror form-control':'form-control'?>" 
-        value="<?=isset($result['examPoints'])?$result['examPoints']:''?>" />
+        class="form-control <?=(isset($data) && $data['examPoints']==null)?'dataerror':''?>" 
+        value="<?=isset($data['examPoints'])?$data['examPoints']:''?>" />
       </div>
 
       <div class='form-group'>
         <label for="birthYear">Год рождения</label>
         <input type="number" name="birthYear" id="birthYear" required
-        class="<?=(isset($result) && $result['birthYear']==null)?'dataerror form-control':'form-control'?>" 
-        value="<?=isset($result['birthYear'])?$result['birthYear']:''?>" /> 
+        class="form-control <?=(isset($data) && $data['birthYear']==NULL)?'dataerror':''?>" 
+        value="<?=isset($data['birthYear'])?$data['birthYear']:''?>" /> 
       </div>
 
       <div class='form-group'>
         <label for='registration'>Прописка</label>
         <select id="registration" name="registration" class='form-control' required>
           <option value="resident" 
-            <?=(isset($result['registration'])&&$result['registration']=='resident')?'selected':'';?>
+            <?=(isset($data['registration'])&&$data['registration']=='resident')?'selected':'';?>
             >Местный</option>
           <option value="nonresident" 
-            <?=(isset($result['registration'])&&$result['registration']=='nonresident')?'selected':'';?>
+            <?=(isset($data['registration'])&&$data['registration']=='nonresident')?'selected':'';?>
             >Иногородний</option>
         </select>
       </div>

@@ -47,7 +47,8 @@ class Student{
       email = :email,
       examPoints = :examPoints, 
       birthYear = :birthYear,
-      registration = :registration ');
+      registration = :registration 
+      WHERE id='.$_SESSION['id']);
 
       $stmt->bindValue(':firstName',$data['firstName']);
       $stmt->bindValue(':lastName', $data['lastName']);
