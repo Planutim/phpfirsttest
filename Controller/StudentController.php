@@ -51,6 +51,7 @@ class StudentController{
   }
 
   public function edit(){
+
     if(isset($_POST['firstName'])){
       $result=$this->validator->validate($_POST);
 
@@ -71,6 +72,7 @@ class StudentController{
       return $this->notFound();
     }
     else if(isset($_SESSION['id'])){
+
       $result=$this->Student->getById($_SESSION['id']);
 
       return $this->util->getView('form', $result);

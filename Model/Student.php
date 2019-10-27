@@ -93,8 +93,20 @@ class Student{
     if($column=='examPoints'){
       $desc = 'desc';
     }
-    $stmt = $this->db->prepare('SELECT * FROM students ORDER BY :column '.$desc);
-    $stmt->bindValue(':column', $column);
+
+    $query='SELECT * FROM students ORDER BY ';
+    switch($column){
+      case 'firstName':
+        $query = $query . 'firstName';break;
+      case 'lastName':
+        $query=$query . 'lastName';break;
+      case 'groupNumber':
+        $query=$query . 'groupNumber';break;
+      case 'examPoints':
+        $query = $query . 'examPoints DESC';break;
+    }
+    
+    $stmt = $this->db->prepare($query);
     $stmt->execute();
 
     $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);

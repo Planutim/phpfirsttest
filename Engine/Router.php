@@ -28,20 +28,29 @@ class Router{
     // else{
     //   $Controller->notFound();
     // }
-    preg_match('/^\/([^\/]+)\??/',$_SERVER['REQUEST_URI'],$matches);
-    switch($matches&&$matches[1]){
-      case '':
+
+    // preg_match('/^\/([^\/]+)\??/',$_SERVER['REQUEST_URI'],$matches);
+
+    
+
+    switch($_SERVER['REQUEST_URI']){
+      case '/':
         $Controller->index();break;
-      case 'register':
+      //sortBy
+      case preg_match('/\/\?sortBy=(.+)/',$_SERVER['REQUEST_URI'],$matches)?true: false:
+        $Controller->index(null,$matches[1]);break;
+      case '/register':
         $Controller->register();break;
-      case 'edit':
+        
+      case '/edit':
         $Controller->edit();break;
-      case 'login':
+      case '/login':
         $Controller->login();break;
-      case 'logout':
+      case '/logout':
         $Controller->logout();break;
       default:
         $Controller->notFound();break;
     }
+   
   }
 }

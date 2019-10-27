@@ -1,9 +1,12 @@
 <?php
 
+
 namespace Student;
 
+
+
 session_start();
-echo $_SESSION['id'];
+
 require __DIR__.'/Engine/Loader.php';
 
 define('ROOT_PATH', __DIR__.'/');
